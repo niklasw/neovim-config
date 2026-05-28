@@ -1,0 +1,4 @@
+line-length = 79
+
+[lint]
+ignore = ["E265", "E302", "E303"]
