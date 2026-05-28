@@ -6,6 +6,27 @@ Personal Neovim configuration. Uses [lazy.nvim](https://github.com/folke/lazy.nv
 
 ## Required external tools
 
+### Runtime
+
+| Tool | Min version | Purpose | Install |
+|------|-------------|---------|---------|
+| `nvim` | **0.12.0** | — | distro / [github releases](https://github.com/neovim/neovim/releases) |
+| `tree-sitter-cli` | **0.26.1** | Compile parsers on `:TSUpdate` / `:TSInstall` | `npm i -g tree-sitter-cli` or `cargo install tree-sitter-cli` |
+
+### Clipboard (Wayland)
+
+| Tool | Purpose | Install |
+|------|---------|---------|
+| `wl-clipboard` | `<leader>y` / `<leader>Y` copy-paste via `wl-copy` / `wl-paste` | `dnf install wl-clipboard` |
+
+### Tags / code navigation
+
+| Tool | Purpose | Install |
+|------|---------|---------|
+| `ctags` (Universal Ctags) | Automatic tag generation via vim-gutentags | `dnf install ctags` |
+| `global` + `gtags-cscope` | Symbol DB used by cscope_maps.nvim; `:Cscope db build` | `dnf install global` |
+| `fd` | Fast file lister fed to gutentags | `dnf install fd-find` |
+
 ### Python (LSP + formatting)
 
 | Tool | Purpose | Install |
@@ -72,6 +93,8 @@ extend-ignore = ["E265", "E302", "E303", "I001"]
 |--------|---------|
 | `neovim/nvim-lspconfig` | LSP client config (ruff, pyright) |
 | `stevearc/conform.nvim` | Format on save |
+| `nvim-treesitter/nvim-treesitter` | Parser management + syntax highlighting |
+| `julienvincent/nvim-paredit` | Structural editing for Lisp/Scheme/Clojure/Fennel |
 | `nvim-neo-tree/neo-tree.nvim` | File explorer (`<leader>fe`) |
 | `L3MON4D3/LuaSnip` | Snippet engine |
 | `ludovicchabant/vim-gutentags` | Automatic ctags generation |
